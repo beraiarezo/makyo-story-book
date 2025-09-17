@@ -75,7 +75,7 @@ export const DropdownMenu: FC<DropdownMenuProps> = ({
                 <button
                   type="button"
                   className={[
-                    "w-full text-left px-3 py-2 text-sm transition-colors",
+                    "w-full text-left px-3 py-2 text-sm transition-colors cursor-pointer",
                     active
                       ? "bg-emerald-100 font-medium"
                       : "hover:bg-emerald-50",

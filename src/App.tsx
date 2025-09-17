@@ -1,33 +1,25 @@
-import { useState } from "react";
-import { createSearchHighlightPattern } from "./lib/utils";
-import MessageContent from "./components/Content";
-
+import { Dropdown } from "~/components";
 import "./App.css";
 
 const options = [
-  { id: "1", title: "Hello World Hello World" },
-  { id: "2", title: "Hello World Reziko" },
-  { id: "3", title: "Hello World Reziko Beraia" },
+  { id: "1", label: "Hello World Hello World" },
+  { id: "2", label: "Hello World Reziko" },
+  { id: "3", label: "Hello World Reziko Beraia" },
 ];
 
 function App() {
-  const [text, setText] = useState("reziko");
+  const handleChange = (option: string | string[]) => {
+    console.debug(option, "option");
+  };
 
   return (
-    <>
-      <input
-        name="search"
-        type="text"
-        onChange={(e) => setText(e.target.value)}
-      />
-      {options.map((option) => (
-        <MessageContent
-          key={option.id}
-          content={option.title}
-          decoration={createSearchHighlightPattern(text)}
-        />
-      ))}
-    </>
+    <Dropdown
+      options={options}
+      onChange={handleChange}
+      withSearch
+      multiple
+      withPortal
+    />
   );
 }
 
