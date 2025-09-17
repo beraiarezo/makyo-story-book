@@ -6,7 +6,7 @@
 
     ```shell
     # Navigate to the directory
-    cd taskbmakyo-story-book/
+    cd makyo-story-book/
 
     # Install the dependencies
     yarn
