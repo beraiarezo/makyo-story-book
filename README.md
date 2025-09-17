@@ -20,6 +20,6 @@
 
     Run `yarn dev` to see your app visit `http://localhost:5174`
 
-4.  **Start app!**
+4.  **Usage**
 
     After installing as dependency `import { Dropdown } from "[dependency_name]" ` and also should include css `import "[depdendency_name]/style.css";`
