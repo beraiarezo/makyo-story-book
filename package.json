@@ -6,6 +6,16 @@
   "type": "module",
   "license": "MIT",
   "private": true,
+  "style": "dist-lib/style.css",
+  "exports": {
+    ".": {
+      "types": "./dist-lib/index.d.ts",
+      "import": "./dist-lib/index.mjs",
+      "require": "./dist-lib/index.cjs"
+    },
+    "./style.css": "./dist-lib/style.css"
+  },
+  "sideEffects": ["**/*.css"],
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -13,12 +23,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:lib": "vite build --config vite.config.lib.ts && tsc -p tsconfig.types.json",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "init-msw": "msw init public/",
     "chromatic": "npx chromatic --project-token=chpt_dc7c8c75704cba3"
   },
+  "files": ["dist-lib"],
   "devDependencies": {
     "@chromatic-com/storybook": "4.0.1",
     "@eslint/js": "^9.30.1",

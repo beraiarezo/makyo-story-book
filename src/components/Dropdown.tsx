@@ -1,22 +1,10 @@
 import { createPortal } from "react-dom";
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { iconClose, iconDownArrow } from "~/assets";
+import { FC, useState, useEffect, useRef, useLayoutEffect } from "react";
+import { iconClose, iconDownArrow } from "../assets";
 import { DropdownMenu } from "./DropdownMenu";
+import { DropdownProps, Option } from "./Types";
 
-type Option = { id: string; label: string };
-
-interface DropdownProps {
-  id?: string;
-  withSearch?: boolean;
-  options: Option[];
-  multiple?: boolean;
-  optionLabel?: string;
-  outlined?: boolean;
-  withPortal?: boolean;
-  onChange?: (arg: string | string[]) => void;
-}
-
-const Dropdown = ({
+const Dropdown: FC<DropdownProps> = ({
   id,
   withSearch,
   options,
@@ -25,7 +13,7 @@ const Dropdown = ({
   optionLabel,
   withPortal,
   onChange,
-}: DropdownProps) => {
+}) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<Option[]>([]);
   const [menuPos, setMenuPos] = useState<{
