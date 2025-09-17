@@ -8,7 +8,6 @@ const Content = ({
   content: string;
   decoration?: RegExp;
 }) => {
-  console.log("--");
   let tContent = decoration ? parser.decorate(content, decoration) : content;
 
   const text =
