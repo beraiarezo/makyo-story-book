@@ -22,4 +22,4 @@
 
 4.  **Usage**
 
-    After installing as dependency `import { Dropdown } from "[dependency_name]" ` and also should include css `import "[depdendency_name]/style.css";`
+    After installing as dependency `import { Dropdown } from "makyo-story-book" ` and also should include css `import "makyo-story-book/style.css";`
